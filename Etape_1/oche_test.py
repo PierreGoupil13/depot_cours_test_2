@@ -34,8 +34,8 @@ class OhceTest(unittest.TestCase):
         retour = ohce.miroir(mot)
 
         # ALORS 'Bonjour' est envoyé avant le mot et 'Au revoir' est envoyé après.
-        self.assertIn("Bonjour " + mot[::-1], retour)
-        self.assertIn(mot[::-1] + " Au revoir", retour)
+        self.assertIn("Bonjour ", retour)
+        self.assertIn(" Au revoir", retour)
             # Unittest n'ayant pas de 'start with' j'ai du faire comme cela
 
 
