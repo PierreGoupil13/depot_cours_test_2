@@ -1,3 +1,3 @@
 class Ohce:
     def miroir(self,mot):
-        return mot
+        return mot[::-1]
