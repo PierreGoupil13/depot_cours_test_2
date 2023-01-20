@@ -11,11 +11,10 @@ class OhceTest(unittest.TestCase):
         ])
     def test_palindrome(self,langue,mot,attendu):
         # QUAND on saisit un palindrome ET que l'on saisit une langue
-        ohce = Ohce().langue_palindrome(langue)
-        retour = ohce.miroir(mot)
+        ohce = Ohce()
 
         # ALORS celui-ci est renvoyé
-        retour_palindrome = ohce.miroir(mot)
+        retour_palindrome = ohce.miroir(mot,langue)
         self.assertIn(mot, retour_palindrome)
 
         # ET 'Bien dit' est renvoyé ensuite dans la langue correcte
