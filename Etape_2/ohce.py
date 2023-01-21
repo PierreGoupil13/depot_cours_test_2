@@ -1,10 +1,12 @@
 class Ohce:
     def miroir(self,mot, langue):
         miroir = mot[::-1]
-        mot_palindrome = self.langue_palindrome(langue)
+        bien_dit_langue = self.langue_palindrome(langue)
+        bonjour_langue_choisit = self.bonjour_langue(langue)
+
         if mot == miroir:
-            return miroir + mot_palindrome
-        return "Bonjour \n " + miroir + "\n Au revoir"
+            return miroir + bien_dit_langue
+        return bonjour_langue_choisit + "\n " + miroir + "\n Au revoir"
     
     def langue_palindrome(self,langue):
         langue_actuelle = langue.lower()
@@ -12,4 +14,6 @@ class Ohce:
             return "\n Bien dit"
         else :
             return "\n Well said"
-        
+    
+    def bonjour_langue(self,langue):
+        return ""
