@@ -34,7 +34,21 @@ class OhceTest(unittest.TestCase):
 
         #ET celle-ci est retourné en miroir
         self.assertIn(mot[::-1], retour_palindrome)
+    
+    @parameterized.parameterized.expand([
+        ("francais","toto", "Au revoir"),
+        ("anglais","test", "Good bye")
+        ])
+    def test_au_revoir_langue(self,langue,mot,attendu):
+        # QUAND on saisit une chaine ET une langue
+        ohce = Ohce()
 
+        # ALORS celle-ci est retourné en miroir
+        retour_palindrome = ohce.miroir(mot,langue)
+        self.assertIn(mot[::-1], retour_palindrome)
+
+        # ET 'au revoir' est envoyé ensuite dans la langue séléctioné
+        self.assertIn(attendu,retour_palindrome)
 
 if __name__ == '__main__':
     unittest.main()
