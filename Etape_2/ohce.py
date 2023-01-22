@@ -24,4 +24,8 @@ class Ohce:
             return "\n Hello"
     
     def au_revoir_langue(self,langue):
-        pass
+        langue_actuelle = langue.lower()
+        if langue_actuelle == "francais":
+            return "\n Au revoir"
+        else :
+            return "\n Good bye"
