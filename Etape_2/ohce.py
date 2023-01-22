@@ -16,4 +16,8 @@ class Ohce:
             return "\n Well said"
     
     def bonjour_langue(self,langue):
-        return ""
+        langue_actuelle = langue.lower()
+        if langue_actuelle == "francais":
+            return "\n Bonjour"
+        else :
+            return "\n Hello"
