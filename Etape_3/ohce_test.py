@@ -8,13 +8,13 @@ class OhceTest(unittest.TestCase):
         ("francais","matin","test", "Bonjour"),
         ("anglais","matin","toto", "Good Morning")
         ])
-    def test_palindrome_langue(self,langue,periode_journee,mot,attendu):
+    def test_miroir_langue_periode_salutation(self,langue,periode_journee,mot,attendu):
         # ETANT DONNE une langue ET une période de la journée
         ohce = Ohce()
 
         # QUAND on saisit une chaine de caractère
         resultat = ohce.miroir(mot,langue,periode_journee)
-        print(resultat)
+
         # ALORS "salutation" est retournée avant tout dans la langue choisie
         self.assertIn(attendu,resultat)
 
@@ -23,16 +23,16 @@ class OhceTest(unittest.TestCase):
         ("francais","matin","test", "Au revoir"),
         ("anglais","matin","toto", "Good bye")
         ])
-    def test_palindrome_langue(self,langue,periode_journee,mot,attendu):
+    def test_miroir_langue_periode_revoir(self,langue,periode_journee,mot,attendu):
         # ETANT DONNE une langue ET une période de la journée
         ohce = Ohce()
 
         # QUAND on saisit une chaine de caractère
         resultat = ohce.miroir(mot,langue,periode_journee)
-        print(resultat)
+
         # ALORS "au revoir" est retournée après tout dans la langue choisie
         self.assertIn(attendu,resultat)
-        
+
 if __name__ == '__main__':
     unittest.main()
 

@@ -1,5 +1,6 @@
 import langue_periode_dummy as langue_periode_dummy
 import constantes_salutations as salutation
+import constantes_revoir as revoir
 
 class Ohce:
 
@@ -33,17 +34,43 @@ class Ohce:
                     return salutation.francais.SOIREE
                 case "nuit":
                     return salutation.francais.NUIT
+        if langue_actuelle == "anglais":
+            match periode_actuelle:
+                case "matin":
+                    return salutation.anglais.MATIN
+                case "apres_midi":
+                    return salutation.anglais.APRES_MIDI
+                case "soiree":
+                    return salutation.anglais.SOIREE
+                case "nuit":
+                    return salutation.anglais.NUIT
+
+        return langue_periode_dummy.revoir_langue_periode_dummy(langue,periode)
+        
+
+    def au_revoir_langue_choisit(self,langue,periode):
+        langue_actuelle = langue.lower()
+        periode_actuelle = periode.lower()
 
         if langue_actuelle == "anglais":
             match periode_actuelle:
                 case "matin":
-                    return  salutation.anglais.MATIN
+                    return  revoir.anglais.MATIN
                 case "apres_midi":
-                    return salutation.anglais.APRES_MIDI
+                    return revoir.anglais.APRES_MIDI
                 case "soiree":
-                    return  salutation.anglais.SOIREE
+                    return  revoir.anglais.SOIREE
                 case "nuit":
-                    return salutation.anglais.NUIT
-    
-    def au_revoir_langue_choisit(self,langue,periode):
+                    return revoir.anglais.NUIT
+        
+        if langue_actuelle == "francais":
+            match periode_actuelle:
+                case "matin":
+                    return  revoir.francais.MATIN
+                case "apres_midi":
+                    return revoir.francais.APRES_MIDI
+                case "soiree":
+                    return  revoir.francais.SOIREE
+                case "nuit":
+                    return revoir.francais.NUIT
         return langue_periode_dummy.revoir_langue_periode_dummy(langue,periode)
