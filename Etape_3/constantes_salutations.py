@@ -5,7 +5,7 @@ class francais:
     NUIT = "Bonne nuit"
 
 class anglais:
-    MATIN = "Good Morning"
-    APRES_MIDI = "Good Afternoon"
-    SOIREE = "Good Evening"
-    NUIT = "Good Night"
+    MATIN = "Good morning"
+    APRES_MIDI = "Good afternoon"
+    SOIREE = "Good evening"
+    NUIT = "Good night"
