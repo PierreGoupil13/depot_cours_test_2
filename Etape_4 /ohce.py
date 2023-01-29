@@ -3,6 +3,7 @@ import constantes_salutations as salutation
 import constantes_revoir as revoir
 import locale
 import datetime
+import sys
 
 class Ohce:
 
@@ -24,6 +25,15 @@ class Ohce:
         else:
             periode = "nuit"
 
+        try:
+            sys.argv[0]
+        except NameError:
+            miroir = mot
+        else:
+            miroir = sys.argv[0]
+
+
+        # Partie metier :
         miroir = mot[::-1]
         bien_dit_langue = self.langue_palindrome(langue)
         bonjour_langue_choisit = self.salutation_langue_periode(langue,periode)
