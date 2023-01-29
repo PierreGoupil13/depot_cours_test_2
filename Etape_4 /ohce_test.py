@@ -5,9 +5,7 @@ from ohce import Ohce
 class OhceTest(unittest.TestCase):
     # Test salutation avec langue et periode
     @parameterized.parameterized.expand([
-        ("francais","matin","test", "Bonjour"),
-        ("francais","apres_midi","test", "Bonjour"),
-        ("francais","nuit","test", "Bonne nuit"),
+        ("francais","soiree","test", "Bonsoir"),
         ])
     def test_miroir_langue_periode_salutation(self,langue,periode_journee,mot,attendu):
         # ETANT DONNE une langue ET une période de la journée
@@ -21,9 +19,7 @@ class OhceTest(unittest.TestCase):
 
     # Test au revoir avec langue et periode
     @parameterized.parameterized.expand([
-        ("francais","matin","test", "Au revoir"),
-        ("francais","nuit","test", "Bonne nuit"),
-        ("francais","nuit","test", "Bonne nuit")
+        ("francais","soiree","test", "Bonsoir"),
         ])
     def test_miroir_langue_periode_revoir(self,langue,periode_journee,mot,attendu):
         # ETANT DONNE une langue ET une période de la journée

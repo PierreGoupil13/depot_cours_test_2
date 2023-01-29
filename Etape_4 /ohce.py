@@ -2,6 +2,7 @@ import langue_periode_dummy as langue_periode_dummy
 import constantes_salutations as salutation
 import constantes_revoir as revoir
 import locale
+import datetime
 
 class Ohce:
 
@@ -10,6 +11,18 @@ class Ohce:
             langue = "francais"
         else:
             langue = "anglais"
+
+        # On se connecte a l'heure du systeme
+        time = datetime.datetime.now().strftime("%H")
+        # Puis on applique l'heure a une des periodes definies
+        if time >= "06" and time <= "12":
+            periode = "matin"
+        elif time >= "13" and time <= "18":
+            periode = "apres_midi" 
+        elif time >= "19" and time <= "23":
+            periode = "soiree"
+        else:
+            periode = "nuit"
 
         miroir = mot[::-1]
         bien_dit_langue = self.langue_palindrome(langue)
