@@ -8,6 +8,7 @@ import sys
 class Ohce:
 
     def miroir(self,mot, langue,periode):
+        # On se connecte a la langue du systeme
         if(langue == None):
             if locale.getlocale()[0] == "fr_FR":
                 langue = "francais"
