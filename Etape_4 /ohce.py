@@ -8,30 +8,24 @@ import sys
 class Ohce:
 
     def miroir(self,mot, langue,periode):
-        if locale.getlocale()[0] == "fr_FR":
-            langue = "francais"
-        else:
-            langue = "anglais"
+        if(langue == None):
+            if locale.getlocale()[0] == "fr_FR":
+                langue = "francais"
+            else:
+                langue = "anglais"
 
         # On se connecte a l'heure du systeme
-        time = datetime.datetime.now().strftime("%H")
+        if(periode == None):
+            time = datetime.datetime.now().strftime("%H")
         # Puis on applique l'heure a une des periodes definies
-        if time >= "06" and time <= "12":
-            periode = "matin"
-        elif time >= "13" and time <= "18":
-            periode = "apres_midi" 
-        elif time >= "19" and time <= "23":
-            periode = "soiree"
-        else:
-            periode = "nuit"
-
-        try:
-            sys.argv[0]
-        except NameError:
-            miroir = mot
-        else:
-            miroir = sys.argv[0]
-
+            if time >= "06" and time <= "12":
+                periode = "matin"
+            elif time >= "13" and time <= "18":
+                periode = "apres_midi" 
+            elif time >= "19" and time <= "23":
+                periode = "soiree"
+            else:
+                periode = "nuit"
 
         # Partie metier :
         miroir = mot[::-1]
